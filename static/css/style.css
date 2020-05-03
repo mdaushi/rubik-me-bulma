@@ -1,0 +1,30 @@
+/* home profile */
+.avatar img{
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 5px;
+    height: auto;
+    width: 8rem;
+}
+
+.title-typed {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+
+/* end home profile */
+  .fix-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    overflow:hidden;
+}
+/* footer */
+.footer-fixed {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    overflow:hidden;
+}

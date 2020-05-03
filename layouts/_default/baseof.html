@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+  <!-- header -->
+  {{ partial "header.html" . }}
+
+  <!-- main -->
+  <div class="">
+      {{- block "main" . }}
+      {{ .Content }}
+      {{- end }}
+  </div>
+
+  <!-- footer -->
+  {{ partial "footer.html" . }}
+  {{ partial "plugin/init-js.html" . }}
+</body>
+
+</html>
+
+
