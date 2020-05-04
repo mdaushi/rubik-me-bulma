@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main role="main" class="colum is-mobile">
+  <div class="column is-half is-offset-one-quarter">
+
+  
+  <h4 class="title">{{ .Section }}</h4>
+
+  {{ .Content }}
+
+  <ul>
+    {{ range .Data.Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+</main>
+
+  
+
+
+
+{{ end }}

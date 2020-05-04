@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main role="main" class="column is-mobile">
+    <article class="column is-half is-offset-one-quarter">
+        <h4 class="title">{{ .Title | default .Site.Title }}</h4>
+
+      
+      {{ .Content }}
+    </article>
+
+</main>
+
+{{ end }}
