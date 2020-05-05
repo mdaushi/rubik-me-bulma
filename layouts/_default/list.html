@@ -2,23 +2,33 @@
 <main role="main" class="colum is-mobile">
   <div class="column is-half is-offset-one-quarter">
 
-  
-  <h4 class="title">{{ .Section }}</h4>
+    <h4 class="title">{{ .Section }}</h4>
 
-  {{ .Content }}
+    {{ .Content }}
 
-  <ul>
-    {{ range .Data.Pages }}
-    <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
-    {{ end }}
-  </ul>
-</div>
+    {{- range .Data.Pages.GroupByDate "2006" }}
+    <div class="posts-group">
+        <div class="post-year">{{ .Key }}</div>
+
+        <ul class="posts-list">
+            {{- range .Pages }}
+                <li class="post-item">
+                    <a href="{{.Permalink}}">
+                        <span class="post-title">{{.Title}}</span>
+                        <span class="post-day is-pulled-right">
+                            {{ if .Site.Params.dateformShort }}
+                                {{ .Date.Format .Site.Params.dateformShort }}
+                            {{ else }}
+                                {{ .Date.Format "Jan 2"}}
+                            {{ end }}
+                        </span>
+                    </a>
+                </li>
+            {{- end }}
+        </ul>
+    </div>
+{{- end }}
+  </div>
 </main>
-
-  
-
-
 
 {{ end }}

@@ -13,6 +13,10 @@
     font-size: 1rem;
 }
 
+.atc-profile {
+    margin-top: 10px;
+}
+
 
 /* end home profile */
   .fix-footer {
@@ -28,3 +32,7 @@
     bottom: 0;
     overflow:hidden;
 }
+
+/* list page */
+
+/* end list page */
