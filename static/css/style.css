@@ -1,3 +1,6 @@
+body{
+    font-family: 'Inter UI', -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",  Helvetica, Arial, sans-serif;
+}
 /* home profile */
 .avatar img{
     border-radius: 50%;
