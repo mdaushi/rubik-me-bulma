@@ -1,0 +1,32 @@
+{{ define "main" }}
+<article>
+    <div class="container">
+        <div class="columns is-multiline">
+            <!--  -->
+            {{ $paginator := .Paginate (where .Site.Pages "Type" "tutorial") 6 }}
+            {{ range $paginator.Pages }}
+            <div class="column is-4">
+                <a href="{{ .RelPermalink }}">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src='{{ if eq .Params.Image "" }}https://bulma.io/images/placeholders/1280x960.png{{else}}{{ .Params.Image }}{{end}}' 
+                                alt="{{ .Title }}">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="content">
+                                {{ .Title }} 
+                                <br>
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</article>
+{{ end }}

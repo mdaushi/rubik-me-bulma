@@ -39,6 +39,7 @@ body{
 /* list page */
 .post-year{
     font-size: 20px;
+    margin-top: 20px;
 }
 hr{
     margin-top: 10px;
