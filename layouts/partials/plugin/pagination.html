@@ -1,0 +1,27 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+    <!-- tombol next n prev -->
+    {{ if $pag.HasPrev }}
+    <a href="{{ $pag.Prev.URL }}" class="pagination-previous" title="This is the first page">Kembali</a>
+    {{ end }}
+
+    {{ if $pag.HasNext }}
+    <a href="{{ $pag.Next.URL }}" class="pagination-next">Next page</a>
+    {{ end }}
+    <!-- end -->
+    <!-- pagination number -->
+    <ul class="pagination-list">
+    {{ range $pag.Pagers }}
+    {{ if eq . $pag }}
+      <li>
+        <a href="{{ .URL }}" class="pagination-link is-current" aria-label="Page 1" aria-current="page">{{ .PageNumber }}</a>
+      </li>
+    {{ else }}
+    <li>
+        <a href="{{ .URL }}" class="pagination-link" aria-label="Page 1" aria-current="page">{{ .PageNumber }}</a>
+      </li>
+      {{ end }}
+      {{ end }}
+    </ul>
+{{ end }}
