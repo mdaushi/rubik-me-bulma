@@ -1,25 +1,39 @@
 {{ define "main" }}
+<section class="hero is-dark is-medium hero-tutor">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">
+                Tutorial
+            </h1>
+            <h2 class="subtitle">
+                Saling Berbagi, Tebar Manfaat
+            </h2>
+        </div>
+    </div>
+</section>
 <article>
     <div class="container">
         <div class="columns is-multiline">
             <!--  -->
-            {{ $paginator := .Paginate (where .Site.Pages "Type" "tutorial") 6 }}
-            {{ range $paginator.Pages }}
+            {{/* $paginator := .Paginate (where .Site.Pages "Type" "tutorial") 6 */}}
+            {{ range .Paginator.Pages }}
             <div class="column is-4">
                 <a href="{{ .RelPermalink }}">
-                    <div class="card">
+                    <div class="card card-lt">
                         <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src='{{ if eq .Params.Image "" }}https://bulma.io/images/placeholders/1280x960.png{{else}}{{ .Params.Image }}{{end}}' 
-                                alt="{{ .Title }}">
+                            <figure class="image is-2by1">
+                                <img class="korner" src='{{ if eq .Params.Image "" }}https://bulma.io/images/placeholders/1280x960.png{{else}}{{ .Params.Image }}{{end}}'
+                                    alt="{{ .Title }}">
                             </figure>
                         </div>
                         <div class="card-content">
 
                             <div class="content">
-                                {{ .Title }} 
+                                <p class="judul-lt is-marginless">
+                                    {{ .Title }}
+                                </p>
                                 <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                <time datetime="">{{ .Date.Format "02-01-2006" }}</time>
                             </div>
                         </div>
                     </div>
@@ -27,6 +41,7 @@
             </div>
             {{ end }}
         </div>
+        {{ partial "plugin/pagination.html" . }}
     </div>
 </article>
 {{ end }}

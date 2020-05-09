@@ -22,19 +22,6 @@ body{
 
 
 /* end home profile */
-  .fix-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    overflow:hidden;
-}
-/* footer */
-.footer-fixed {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    overflow:hidden;
-}
 
 /* list page */
 .post-year{
@@ -53,3 +40,18 @@ hr{
     color: rgb(149, 157, 165);
 }
 /* end list page */
+/* list page tutorial */
+.hero-tutor{
+    margin-bottom: 20px;
+}
+.card-lt{
+    border-radius: 10px;
+}
+figure .korner{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.judul-lt{
+    font-size: 1.5rem;
+}
+/* end */
