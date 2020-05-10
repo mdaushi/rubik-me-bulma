@@ -1,5 +1,5 @@
 body{
-    font-family: 'Inter UI', -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",  Helvetica, Arial, sans-serif;
+    font-family: 'Titillium Web', sans-serif;
 }
 /* home profile */
 .avatar img{
@@ -19,8 +19,6 @@ body{
 .atc-profile {
     margin-top: 10px;
 }
-
-
 /* end home profile */
 
 /* list page */
@@ -40,6 +38,7 @@ hr{
     color: rgb(149, 157, 165);
 }
 /* end list page */
+
 /* list page tutorial */
 .hero-tutor{
     margin-bottom: 20px;
@@ -54,4 +53,23 @@ figure .korner{
 .judul-lt{
     font-size: 1.5rem;
 }
+/* end */
+
+/* artikel tutorial */
+.img-header-lt img{
+    border-radius: 10px;
+}
+.avatar-author img.img-avatar {
+    border-radius: 50%;
+}
+.avatar-author{
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    background-color: chartreuse;
+}
+.avatar-author a{
+    margin-left: 10px;
+}
+
 /* end */

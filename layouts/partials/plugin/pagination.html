@@ -3,7 +3,7 @@
 <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
     <!-- tombol next n prev -->
     {{ if $pag.HasPrev }}
-    <a href="{{ $pag.Prev.URL }}" class="pagination-previous" title="This is the first page">Kembali</a>
+    <a href="{{ $pag.Prev.URL }}" class="pagination-previous" title="This is the first page">Previous</a>
     {{ end }}
 
     {{ if $pag.HasNext }}
@@ -12,16 +12,16 @@
     <!-- end -->
     <!-- pagination number -->
     <ul class="pagination-list">
-    {{ range $pag.Pagers }}
-    {{ if eq . $pag }}
-      <li>
-        <a href="{{ .URL }}" class="pagination-link is-current" aria-label="Page 1" aria-current="page">{{ .PageNumber }}</a>
-      </li>
-    {{ else }}
-    <li>
-        <a href="{{ .URL }}" class="pagination-link" aria-label="Page 1" aria-current="page">{{ .PageNumber }}</a>
-      </li>
-      {{ end }}
-      {{ end }}
+        {{ range $pag.Pagers }}
+        {{ if eq . $pag }}
+        <li>
+            <a href="{{ .URL }}" class="pagination-link is-current">{{ .PageNumber }}</a>
+        </li>
+        {{ else }}
+        <li>
+            <a href="{{ .URL }}" class="pagination-link">{{ .PageNumber }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
     </ul>
-{{ end }}
+    {{ end }}
