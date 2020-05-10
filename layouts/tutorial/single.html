@@ -6,15 +6,28 @@
             <figure class="image is-2by1 img-header-lt">
                 <img src="{{ .Params.image }}" alt="">
             </figure>
-            <h4 class="title">{{ .Title | default .Site.Title }}</h4>
+            {{- with .Params.tags }}
+            <div class="tags is-marginless">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> -->
+                {{- range . -}}
+                <a class="tag is-warning" href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{.}}</a>
+                {{- end }}
+            </div>
+            {{- end }}
+            <h1 class="title is-marginless">{{ .Title | default .Site.Title }}</h1>
             <div class="avatar-author">
                 <img class="img-avatar" src="{{ .Site.Author.image }}" width="32" height="32">
-                <a href="">{{ .Site.Author.name }}</a> | <time>{{ .Date.Format "02-01-2006" }}</time>
+                <a href="">{{ .Site.Author.name }}</a>
+                <i class="far fa-clock fa-sm"></i>
+                <time>{{ .Date.Format "02-01-2006" }}</time>
+
             </div>
-            
+
+
+
         </div>
         <!-- end -->
-        
+
 
         {{ .Content }}
     </article>
