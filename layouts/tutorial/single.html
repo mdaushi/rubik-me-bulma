@@ -1,5 +1,5 @@
 {{ define "main" }}
-<main role="main" class="columns is-mobile">
+<main role="main" class="columns is-desktop is-marginless">
     <article class="column is-half is-offset-one-quarter">
         <!-- head artikel -->
         <div class="post-header">
@@ -17,7 +17,7 @@
             <h1 class="title is-marginless">{{ .Title | default .Site.Title }}</h1>
             <div class="avatar-author">
                 <img class="img-avatar" src="{{ .Site.Author.image }}" width="32" height="32">
-                <a href="">{{ .Site.Author.name }}</a>
+                <a href="{{ .Site.Author.homepage }}">{{ .Site.Author.name }}</a>
                 <i class="far fa-clock fa-sm"></i>
                 <time>{{ .Date.Format "02-01-2006" }}</time>
 
