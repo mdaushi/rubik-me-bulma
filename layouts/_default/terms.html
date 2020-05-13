@@ -1,0 +1,38 @@
+{{ define "main" }}
+{{- $taxonomies := .Data.Plural -}}
+<section class="hero is-fullheight-with-navbar">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+
+            <!-- page kategori -->
+            {{- if eq $taxonomies "categories" -}}
+            <h1 class="title">{{ .Title }}</h1>
+            <div class="field is-grouped is-grouped-multiline">
+                {{- range $.Site.Taxonomies.categories.ByCount -}}
+                <div class="control">
+                    <div class="tags has-addons">
+                        <span class="tag"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></span>
+                        <span class="tag is-info">{{ .Count }}</span>
+                    </div>
+                </div>
+                {{- end -}}
+            </div>
+
+            <!-- page tag -->
+            {{- else if eq $taxonomies "tags" -}}
+            <h1 class="title">{{ .Title }}</h1>
+            <div class="field is-grouped is-grouped-multiline">
+                {{- range $.Site.Taxonomies.tags.ByCount -}}
+                <div class="control">
+                    <div class="tags has-addons has-addons-centered">
+                        <span class="tag"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></span>
+                        <span class="tag is-info">{{ .Count }}</span>
+                    </div>
+                </div>
+                {{- end -}}
+            </div>
+            {{- end -}}
+        </div>
+    </div>
+</section>
+{{ end }}
