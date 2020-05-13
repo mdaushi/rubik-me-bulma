@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ partial "plugin/sosmed-share.html" . }}
 <main role="main" class="columns is-desktop is-marginless">
     <article class="column is-half is-offset-one-quarter">
         <!-- head artikel -->
@@ -6,11 +7,11 @@
             <figure class="image is-2by1 img-header-lt">
                 <img src="{{ .Params.image }}" alt="">
             </figure>
-            {{- with .Params.tags }}
+            {{- with .Params.categories }}
             <div class="tags is-marginless">
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> -->
                 {{- range . -}}
-                <a class="tag is-warning" href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{.}}</a>
+                <a class="tag is-warning" href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{.}}</a>
                 {{- end }}
             </div>
             {{- end }}
@@ -20,16 +21,36 @@
                 <a href="{{ .Site.Author.homepage }}">{{ .Site.Author.name }}</a>
                 <i class="far fa-clock fa-sm"></i>
                 <time>{{ .Date.Format "02-01-2006" }}</time>
-
             </div>
-
-
-
         </div>
         <!-- end -->
-
-
-        {{ .Content }}
+        <div class="">
+            {{ .Content }}
+        </div>
+        <hr>
+        <!-- Main container -->
+<nav class="level is-mobile">
+    <!-- Left side -->
+    <div class="level-left">
+        <i class="level-item fas fa-tags"></i>
+        {{- with .Params.tags }}
+        <div class="tags is-marginless">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> -->
+            {{- range . -}}
+            <a class="tag is-warning" href="{{ "categories/" | absLangURL }}{{ . | urlize }}">#{{.}}</a>
+            {{- end }}
+        </div>
+        {{- end }}
+    </div>
+  
+    <!-- Right side -->
+    <div class="level-right">
+      <span class="tag level-item button modal-button" data-target="modal-id">
+        <i class="level-item fas fa-share-alt"></i>
+        <p class="level-item">Bagikan</p>
+      </span>
+    </div>
+  </nav>
     </article>
 
 </main>

@@ -6336,7 +6336,8 @@ a.list-item {
 }
 
 .modal-background {
-  background-color: rgba(10, 10, 10, 0.86);
+  /* background-color: rgba(10, 10, 10, 0.86); */
+  background-color: white;
 }
 
 .modal-content,
@@ -6358,7 +6359,7 @@ a.list-item {
 }
 
 .modal-close {
-  background: none;
+  background: black;
   height: 40px;
   position: fixed;
   right: 20px;
