@@ -1,25 +1,18 @@
-<!-- related modal with fx class "modal-fx-fadeInScale" -->
-<div id="modal-id" class="modal modal-fx-fadeInScale is-active">
-    <div class="modal-background"></div>
-    <!-- Any other Bulma elements you want -->
-    <div class="modal-content">
-        <a href="" class="icon-a">
-            <span class="icon">
-                <span class="">
-                    <i class="fas fa-circle fa-2x  fa-stack-2x"></i>
-                    <i class="fab fa-github-alt fa-2x fa-stack-1x fa-inverse"></i>
-                </span>
-            </span>
-        </a><a href="" class="icon-a">
-            <span class="icon">
-                <span class="">
-                    <i class="fas fa-circle fa-2x  fa-stack-2x"></i>
-                    <i class="fab fa-github-alt fa-2x fa-stack-1x fa-inverse"></i>
-                </span>
-            </span>
-        </a>
-            
-        </div>
-    </div>
-    <button class="modal-close is-large" aria-label="close"></button>
+<a href="https://www.facebook.com/share.php?u={{ .RelPermalink }}&title={{ .title }}">
+    <span class="icon">
+        <i class="fab fa-facebook"></i>
+    </span>
+</a>
+<a href="https://twitter.com/intent/tweet?status={{ .title }}+{{ .RelPermalink }}">
+    <span class="icon">
+        <i class="fab fa-twitter"></i>
+    </span>
+</a>
+<a href="whatsapp://send?text=Link pra um artigo ó https://google.com">
+    <span class="icon">
+        <i class="fab fa-whatsapp"></i>
+    </span>
+</a>
+<div class="tag">
+    <span>: Bagikan</span>
 </div>
