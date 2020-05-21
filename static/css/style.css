@@ -39,6 +39,10 @@ hr{
 .post-day{
     color: rgb(149, 157, 165);
 }
+.margin-top{
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
 /* end list page */
 
 /* list page tutorial */
